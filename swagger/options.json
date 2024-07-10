@@ -1,0 +1,24 @@
+{
+  "definition": {
+    "openapi": "3.0.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Todo Fullstack Api",
+      "description": "Todo api",
+      "termsOfService": "http://www.ibrsec.com",
+      "contact": {
+        "name": "ibrsec",
+        "email": "ibr.seckin@gmail.com"
+      },
+      "license": {
+        "name": "ISC Licence"
+      }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:80"
+      }
+    ]
+  },
+  "apis": ["./index.js", "./router/todoRouter.js", "./router/userRouter"]
+}
