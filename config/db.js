@@ -11,7 +11,8 @@ const sequelize = new Sequelize(process.env.CONNECTION_STRING, {
       require: true, // SSL gereksinimini ayarlayın
       rejectUnauthorized: false // Sertifikayı doğrulamayın
     }
-  }
+  },
+  dialectModule: require('pg'),
 });
 // const sequelize = new Sequelize(process.env.CONNECTION_STRING)
 
