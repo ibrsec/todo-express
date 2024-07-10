@@ -39,10 +39,14 @@ const getOneTodo = async (req, res) => {
 //@access private
 //! POST - ###################
 const createTodo = async (req, res) => {
-  const { title } = req.body;
+  const { title,priority } = req.body;
   if (!title) {
     res.status(400);
     throw new Error("400 Bad Request - Title is mandatory!");
+  }
+  if (priority < -1 || priority > 1) {
+    res.status(400);
+    throw new Error("400 Bad Request - Priority value should be one of - [-1,0,1]");
   }
 
   const newTodo = await Todo.create({
@@ -60,9 +64,13 @@ const createTodo = async (req, res) => {
 //@access private
 //! PUT - ###################
 const updateTodo = async (req, res) => {
-  const { title } = req.body;
+  const { title, priority} = req.body;
   if (!title) {
     throw new Error("400 Bad Reques - Title is mandatory!");
+  }
+  if (priority < -1 || priority > 1) {
+    res.status(400);
+    throw new Error("400 Bad Request - Priority value should be one of - [-1,0,1]");
   }
 
   const todo = await Todo.findByPk(req.params.id);
