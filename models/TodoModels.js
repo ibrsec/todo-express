@@ -20,7 +20,7 @@ const Todo = sequelize.define("todos", {
   },
   priority: {
     // 0:Normal, 1:High, -1:Low;
-    type: DataTypes.TINYINT,
+    type: DataTypes.SMALLINT,
     allowNull: false,
     defaultValue: 0,
   },
