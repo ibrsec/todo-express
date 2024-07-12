@@ -9,6 +9,13 @@ const { syncUser } = require("./models/UserModels");
 const { syncTodo } = require("./models/TodoModels");
 const sequelize = require("./config/db");
 const PORT = process.env.PORT || 80;
+
+
+
+const cors = require('cors');
+app.use(cors());
+
+
 app.use(express.json());
 
 const dbConnect = async () => {
